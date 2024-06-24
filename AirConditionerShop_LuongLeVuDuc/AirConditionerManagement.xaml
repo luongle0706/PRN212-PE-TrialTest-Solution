@@ -1,0 +1,47 @@
+﻿<Window x:Class="AirConditionerShop_LuongLeVuDuc.AirConditionerManagement"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AirConditionerShop_LuongLeVuDuc"
+        mc:Ignorable="d"
+        Title="Main AirConditioner Management Window" Height="500" Width="800"
+        FontFamily="Arial"
+        FontSize="14"
+        Background="#FFD4F7D4"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <!--<Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>-->
+        <StackPanel>
+            <Label x:Name="lblTittle" FontFamily="Arial Narrow" Content="Air Conditioner Management" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0"/>
+            <WrapPanel Margin="20,20,20,0">
+                <Label x:Name="lblSearchFeature" FontFamily="Arial Narrow" FontSize="12" Content="Feature Funtion:" Width="90" Height="30"/>
+                <TextBox x:Name="tbSearchFeature" HorizontalAlignment="Left" TextAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" Height="30"/>
+                <Label x:Name="lblSearchQuantity" FontFamily="Arial Narrow" FontSize="12" Content="Quantity:" Width="90" Height="30" Margin="40,0,0,0"/>
+                <TextBox x:Name="tbSearchQuantity" HorizontalAlignment="Left" TextAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" Height="30"/>
+                <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="100" Click="btnSearch_Click" Padding="2,1,1,1" Margin="20,0,0,0"/>
+            </WrapPanel>
+            <WrapPanel Margin="20,20,20,20">
+                <DataGrid x:Name="dgAirConditionerList" Width="600" Height="300" AutoGenerateColumns="False" CanUserResizeColumns="True" Loaded="dgAirConditionerList_Loaded" SelectionChanged="dgAirConditionerList_SelectionChanged">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding Path=AirConditionerId}"/>
+                        <DataGridTextColumn Width="200" Header="Name" Binding="{Binding Path=AirConditionerName}"/>
+                        <DataGridTextColumn Header="Warranty" Binding="{Binding Path=Warranty}"/>
+                        <DataGridTextColumn Header="Sound Pressure Level" Binding="{Binding Path=SoundPressureLevel}"/>
+                        <DataGridTextColumn Header="Feature Function" Binding="{Binding Path=FeatureFunction}"/>
+                        <DataGridTextColumn Header="Quantity" Binding="{Binding Path=Quantity}"/>
+                        <DataGridTextColumn Header="Dollar Price" Binding="{Binding Path=DollarPrice}"/>
+                        <DataGridTextColumn Header="Supplier Id" Binding="{Binding Path=SupplierId}"/>
+                        <!--<DataGridTextColumn Header="Supplier Name" Binding="{Binding Path=SupplierName}"/>-->
+                    </DataGrid.Columns>
+                </DataGrid>
+                <StackPanel Margin="30,0,0,0">
+                    <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="100" Click="btnAdd_Click" Margin="0,20,0,0"/>
+                    <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="100" Click="btnUpdate_Click" Margin="0,20,0,0"/>
+                    <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="100" Click="btnDelete_Click" Margin="0,20,0,0"/>
+                    <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="100" Click="btnExit_Click" Margin="0,50,0,0"/>
+                </StackPanel>
+            </WrapPanel>
+        </StackPanel>
+    </Grid>
+</Window>
